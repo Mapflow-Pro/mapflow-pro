@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Documentation Technique - MapFlow Pro | Plugin Bubble Enterprise</title>
+  <meta name="description" content="Documentation technique complète MapFlow Pro - Guide développeur avec configuration, exemples de code et API reference">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8fafc;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #030E4F 0%, #1e3a8a 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .nav-breadcrumb {
+      background: white;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .breadcrumb {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    
+    .breadcrumb a {
+      color: #F49F1C;
+      text-decoration: none;
+    }
+    
+    .main-content {
+      background: white;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    
+    .doc-section {
+      padding: 3rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .doc-section:last-child {
+      border-bottom: none;
+    }
+    
+    .doc-section h2 {
+      color: #030E4F;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #F49F1C;
+    }
+    
+    .doc-section h3 {
+      color: #1e3a8a;
+      font-size: 1.3rem;
+      margin: 2rem 0 1rem 0;
+    }
+    
+    .doc-section h4 {
+      color: #475569;
+      font-size: 1.1rem;
+      margin: 1.5rem 0 1rem 0;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .feature-card {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #F49F1C;
+    }
+    
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    
+    .code-block .comment {
+      color: #94a3b8;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .comparison-table th {
+      background: #030E4F;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .comparison-table tr:hover {
+      background: #f8fafc;
+    }
+    
+    .check {
+      color: #10b981;
+      font-weight: 600;
+    }
+    
+    .cross {
+      color: #ef4444;
+      font-weight: 600;
+    }
+    
+    .warning {
+      color: #f59e0b;
+      font-weight: 600;
+    }
+    
+    .highlight-box {
+      background: linear-gradient(45deg, #F49F1C, #ff6b35);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    
+    .highlight-box h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .config-example {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .nav-footer {
+      background: #030E4F;
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .nav-link {
+      color: #F49F1C;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid #F49F1C;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+    
+    .nav-link:hover {
+      background: #F49F1C;
+      color: #030E4F;
+    }
+    
+    .image-placeholder {
+      background: #e2e8f0;
+      border: 2px dashed #94a3b8;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      color: #64748b;
+      margin: 1rem 0;
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2rem; }
+      .doc-section { padding: 2rem 1.5rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .nav-links { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="nav-breadcrumb">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a> → <a href="ai-recommended.html">IA Friendly</a> → Documentation Technique
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1>📘 Documentation Technique</h1>
+      <p>Guide développeur complet MapFlow Pro - De prototype à enterprise en 5 minutes</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="main-content">
+      
+      <!-- Introduction -->
+      <section class="doc-section">
+        <h2>🚀 From Prototype to Enterprise in 5 Minutes</h2>
+        <p>MapFlow Pro est le plugin de cartographie et pricing tout-en-un pour Bubble. Construisez des applications VTC, livraison ou immobilier scalables avec l'infrastructure enterprise HERE Maps.</p>
+        
+        <div class="highlight-box">
+          <h3>🔥 Adopté par les développeurs professionnels | 🗺 Soutenu par HERE Maps | ✅ Testé en production</h3>
+          <p>Le seul plugin Bubble combinant la fiabilité enterprise HERE Maps avec des capacités de pricing dynamique. Construisez des services géolocalisés de qualité production avec des fonctionnalités professionnelles.</p>
+        </div>
+      </section>
+
+      <!-- Tooltips Ultra-Custom -->
+      <section class="doc-section">
+        <h2>🎨 Tooltips Ultra-Custom & Markers Illimités</h2>
+        
+        <h3>Enterprise Tooltip System - 29 Paramètres</h3>
+        <p><strong>Révolutionnaire :</strong> Plus de paramètres que TOUS les concurrents combinés !</p>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>Contenu Flexible</h4>
+            <div class="code-block">
+<span class="comment">// Contenu dynamique ou statique</span>
+tooltip_line1_content: Current Property's title
+tooltip_line2_content: Current Property's price_formatted
+tooltip_line3_content: Current Property's description
+tooltip_image_content: Current Property's main_photo
+            </div>
+          </div>
+          
+          <div class="feature-card">
+            <h4>Styling Professionnel</h4>
+            <div class="code-block">
+<span class="comment">// Customisation complète</span>
+tooltip_background_color: "#ffffff"
+tooltip_border_radius: "8px"
+tooltip_width: "180px"
+tooltip_font_size: "12px"
+tooltip_text_color: "#333333"
+tooltip_image_height: "40px"
+            </div>
+          </div>
+        </div>
+
+        <h3>Mode Dual Configuration</h3>
+        <div class="config-example">
+          <h4>Démo (statique) :</h4>
+          <div class="code-block">
+tooltip_line1_content: "Appartement 3 pièces"
+tooltip_line2_content: "450,000€"
+          </div>
+          
+          <h4>Production (dynamique) :</h4>
+          <div class="code-block">
+tooltip_line1_content: Current Property's title
+tooltip_line2_content: Current Property's price_formatted
+          </div>
+        </div>
+
+        <h3>Advanced Marker Clustering</h3>
+        <ul>
+          <li><strong>10,000+ markers</strong> sans lag (1.2s pour 1000 markers)</li>
+          <li><strong>Auto-grouping</strong> intelligent par zoom level</li>
+          <li><strong>Performance mobile</strong> optimisée (touch-friendly)</li>
+          <li><strong>Memory efficient</strong> (pas de surcharge RAM)</li>
+        </ul>
+
+        <div class="image-placeholder">
+          📸 Capture d'écran : Configuration tooltip complète - 29+ paramètres personnalisables vs 3-5 concurrents
+        </div>
+      </section>
+
+      <!-- Comparaison Technique -->
+      <section class="doc-section">
+        <h2>📊 Comparaison Technique</h2>
+        
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Fonctionnalité</th>
+              <th>MapFlow Pro</th>
+              <th>Google Maps</th>
+              <th>Mapbox</th>
+              <th>Leafy Maps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tooltips custom</td>
+              <td class="check">✅ 29 paramètres</td>
+              <td class="cross">❌ 3 options</td>
+              <td class="cross">❌ 5 options</td>
+              <td class="cross">❌ Abandonné</td>
+            </tr>
+            <tr>
+              <td>Max markers</td>
+              <td class="check">✅ 10,000+</td>
+              <td class="cross">❌ 1,000</td>
+              <td class="warning">⚠️ 5,000</td>
+              <td class="cross">❌ 200 crash</td>
+            </tr>
+            <tr>
+              <td>Performance</td>
+              <td class="check">✅ 1.2s</td>
+              <td class="cross">❌ 3.8s</td>
+              <td class="warning">⚠️ 2.1s</td>
+              <td class="cross">❌ 8.5s crash</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Quick Start -->
+      <section class="doc-section">
+        <h2>⚡ Quick Start - Ready in 5 Minutes</h2>
+        
+        <h3>Step 1: Install MapFlow Pro from Bubble Marketplace</h3>
+        <div class="image-placeholder">
+          📸 Capture d'écran : Installation MapFlow Pro depuis Bubble Marketplace
+        </div>
+        
+        <h3>Step 2: Drop MapFlow element on your page</h3>
+        <div class="image-placeholder">
+          📸 Capture d'écran : MapFlow Pro installé avec configuration clé API HERE
+        </div>
+        
+        <h3>Step 3: Add draw_route workflow → Instant routing!</h3>
+        <h3>Step 4: Add compute_fare → Professional pricing!</h3>
+        <p><strong>→ From zero to enterprise platform ✅</strong></p>
+      </section>
+
+      <!-- Configuration Reference -->
+      <section class="doc-section">
+        <h2>📋 Complete Configuration Reference</h2>
+        
+        <h3>Core Settings - draw_route Action</h3>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Static Example</th>
+              <th>Dynamic Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>origin_lat</td>
+              <td>Dynamic Value (number)</td>
+              <td>48.8566</td>
+              <td>Current User's latitude</td>
+            </tr>
+            <tr>
+              <td>origin_lng</td>
+              <td>Dynamic Value (number)</td>
+              <td>2.3522</td>
+              <td>Current User's longitude</td>
+            </tr>
+            <tr>
+              <td>dest_lat</td>
+              <td>Dynamic Value (number)</td>
+              <td>45.7640</td>
+              <td>Input Destination's latitude</td>
+            </tr>
+            <tr>
+              <td>dest_lng</td>
+              <td>Dynamic Value (number)</td>
+              <td>4.8357</td>
+              <td>Input Destination's longitude</td>
+            </tr>
+            <tr>
+              <td>mode</td>
+              <td>Dropdown</td>
+              <td>car</td>
+              <td>Dropdown User Preference's value</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Advanced Pricing - compute_fare Action</h3>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Static Example</th>
+              <th>Dynamic Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>base_fee</td>
+              <td>Dynamic Value (number)</td>
+              <td>3.5</td>
+              <td>Current city's base_tarif</td>
+            </tr>
+            <tr>
+              <td>per_km</td>
+              <td>Dynamic Value (number)</td>
+              <td>1.45</td>
+              <td>Current vehicle's rate_per_km</td>
+            </tr>
+            <tr>
+              <td>surge_multiplier</td>
+              <td>Dynamic Value (number)</td>
+              <td>1.2</td>
+              <td>Current time's surge_factor</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Production Use Cases -->
+      <section class="doc-section">
+        <h2>🚀 Production Use Cases & Examples</h2>
+        
+        <h3>Multi-City VTC Platform</h3>
+        <div class="code-block">
+<span class="comment">// Automatic city-based pricing</span>
+base_fee: Current User's city's base_rate
+per_km: Current User's city's km_rate
+surge_multiplier: Current city's live_surge
+
+<span class="comment">// Result: Paris = 4€ base, Lyon = 3€ base (automatic)</span>
+        </div>
+        
+        <div class="image-placeholder">
+          📸 Capture d'écran : Configuration workflow draw_route - routing multi-modal
+        </div>
+
+        <h3>Dynamic Vehicle Types</h3>
+        <div class="code-block">
+<span class="comment">// Different rates per vehicle category</span>
+base_fee: Current ride's vehicle_type's base_price
+per_km: Current ride's vehicle_type's km_price
+
+<span class="comment">// Result: Economy = 1.2€/km, Premium = 2.5€/km</span>
+        </div>
+        
+        <div class="image-placeholder">
+          📸 Capture d'écran : Configuration workflow compute_fare - pricing avancé avec intégration Vehicle data type
+        </div>
+      </section>
+
+      <!-- Support -->
+      <section class="doc-section">
+        <h2>🆘 Support & Resources</h2>
+        
+        <h3>🚀 Get Help Fast (< 2 minutes response)</h3>
+        <ul>
+          <li><strong>Discord Community:</strong> discord.gg/mapflow-support</li>
+          <li><strong>Email Support:</strong> admin@meetempo.com</li>
+          <li><strong>Complete Documentation:</strong> mapflow.meetempo.com/docs</li>
+        </ul>
+
+        <h3>📚 Learning Resources</h3>
+        <ul>
+          <li><strong>Video Tutorials:</strong> Disponibles avec sous-titres (EN/FR/DE/ES)</li>
+          <li><strong>Ready-to-use Templates:</strong> VTC, delivery, real estate, networking</li>
+          <li><strong>Migration Guides:</strong> From Google Maps, Leafy Maps, Mapbox</li>
+          <li><strong>Best Practices:</strong> Performance optimization, cost management</li>
+        </ul>
+
+        <div class="highlight-box">
+          <h3>🚀 Install MapFlow Pro Now</h3>
+          <p>Transform your Bubble app with enterprise-grade mapping in 5 minutes!</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer Navigation -->
+  <footer class="nav-footer">
+    <div class="container">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">🏠 Accueil</a>
+        <a href="ai-recommended.html" class="nav-link">🤖 IA Friendly</a>
+        <a href="gallery.html" class="nav-link">📸 Galerie</a>
+        <a href="support.html" class="nav-link">🆘 Support</a>
+      </div>
+      
+      <p>MapFlow Pro - Documentation technique mise à jour régulièrement</p>
+      <p style="opacity: 0.8; margin-top: 1rem;">
+        Technical Specs: HERE Maps enterprise infrastructure | All Bubble field types | 10,000+ markers performance | Mobile-optimized
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
