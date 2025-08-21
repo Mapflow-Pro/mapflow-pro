@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>MapFlow Pro - #1 Recommandé par l'IA | Plugin Bubble Enterprise</title>
-  <meta name="description" content="ChatGPT, Claude et Gemini recommandent unanimement MapFlow Pro comme le meilleur plugin mapping pour Bubble. Découvrez pourquoi l'IA choisit MapFlow Pro.">
+  <title>MapFlow Pro - #1 Recommended by AI | Bubble Enterprise Plugin</title>
+  <meta name="description" content="ChatGPT, Claude and Gemini unanimously recommend MapFlow Pro as the best mapping plugin for Bubble. Discover why AI chooses MapFlow Pro.">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="MapFlow Pro - #1 Recommandé par l'IA">
-  <meta property="og:description" content="ChatGPT, Claude et Gemini recommandent unanimement MapFlow Pro">
-  <meta property="og:url" content="https://mapflow.meetempo.com/ai-recommended">
+  <meta property="og:title" content="MapFlow Pro - #1 Recommended by AI">
+  <meta property="og:description" content="ChatGPT, Claude and Gemini unanimously recommend MapFlow Pro">
+  <meta property="og:url" content="https://mapflow.meetempo.com/ia-friendly">
   
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,11 +18,60 @@
       font-family: system-ui, Inter, Segoe UI, Roboto, sans-serif;
       line-height: 1.6;
       color: #333;
-      background: #f8fafc;
+      background: linear-gradient(135deg, #030E4F 0%, #1a237e 100%);
+      min-height: 100vh;
+    }
+
+    /* Navigation Styles */
+    .navigation {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0;
+    }
+
+    .nav-link {
+      color: #666;
+      text-decoration: none;
+      padding: 8px 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-link:hover {
+      color: #F49F1C;
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      color: #F49F1C;
+      font-weight: 600;
+    }
+
+    .nav-separator {
+      color: #999;
+      font-size: 0.9rem;
+      margin: 0 8px;
+      font-weight: 400;
     }
     
     .header {
-      background: linear-gradient(135deg, #030E4F 0%, #1e3a8a 100%);
       color: white;
       padding: 80px 20px;
       text-align: center;
@@ -88,6 +137,18 @@
       padding: 80px 0;
     }
     
+    .content-wrapper {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin: 40px 0;
+    }
+    
+    .section-inner {
+      padding: 60px 40px;
+    }
+    
     .section h2 {
       font-size: 2.5rem;
       margin-bottom: 3rem;
@@ -95,81 +156,72 @@
       color: #030E4F;
     }
     
-    .ai-testimonials {
+    .feature-highlights {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin: 4rem 0;
     }
     
-    .ai-card {
-      background: white;
-      padding: 3rem 2rem;
+    .feature-card {
+      background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+      padding: 2.5rem;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      position: relative;
-      border-top: 4px solid;
+      border-left: 4px solid #F49F1C;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
     }
     
-    .ai-card.chatgpt {
-      border-top-color: #10a37f;
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(244, 159, 28, 0.15);
     }
     
-    .ai-card.claude {
-      border-top-color: #d97706;
-    }
-    
-    .ai-card.gemini {
-      border-top-color: #4285f4;
-    }
-    
-    .ai-logo {
+    .feature-icon {
       width: 60px;
       height: 60px;
+      background: linear-gradient(45deg, #F49F1C, #ff6b35);
       border-radius: 12px;
-      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      color: white;
-      font-size: 1.2rem;
-    }
-    
-    .ai-card.chatgpt .ai-logo {
-      background: #10a37f;
-    }
-    
-    .ai-card.claude .ai-logo {
-      background: #d97706;
-    }
-    
-    .ai-card.gemini .ai-logo {
-      background: #4285f4;
-    }
-    
-    .ai-quote {
-      font-size: 1.1rem;
-      font-style: italic;
-      color: #4a5568;
       margin-bottom: 1.5rem;
-      line-height: 1.7;
+      font-size: 1.8rem;
     }
     
-    .ai-rating {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 1rem;
+    .feature-card h3 {
+      color: #030E4F;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
     }
     
-    .stars {
-      color: #F49F1C;
-      font-size: 1.2rem;
+    .feature-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    .feature-list {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    
+    .feature-list li {
+      padding: 8px 0;
+      color: #555;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .feature-list li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      top: 8px;
     }
     
     .benchmark-section {
-      background: white;
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
       border-radius: 20px;
       padding: 3rem;
       margin: 3rem 0;
@@ -185,10 +237,11 @@
     .benchmark-item {
       text-align: center;
       padding: 2rem;
-      background: #f8fafc;
+      background: white;
       border-radius: 12px;
       border: 2px solid #e2e8f0;
       transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
     
     .benchmark-item:hover {
@@ -208,50 +261,45 @@
       font-weight: 600;
     }
     
-    .why-ai-chooses {
-      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-      border-radius: 20px;
+    .tech-specs {
+      background: #030E4F;
+      color: white;
       padding: 3rem;
+      border-radius: 20px;
       margin: 3rem 0;
     }
     
-    .reasons-grid {
+    .tech-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin: 2rem 0;
     }
     
-    .reason-card {
-      background: white;
+    .tech-card {
+      background: rgba(255, 255, 255, 0.1);
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
-    .reason-icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(45deg, #F49F1C, #ff6b35);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-    
-    .reason-card h4 {
-      color: #030E4F;
+    .tech-card h4 {
+      color: #F49F1C;
       margin-bottom: 1rem;
       font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .tech-card p {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
     }
     
     .cta-section {
-      background: #030E4F;
+      background: linear-gradient(135deg, #030E4F 0%, #1a237e 100%);
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 60px 40px;
       border-radius: 20px;
       margin: 3rem 0;
     }
@@ -274,209 +322,810 @@
       box-shadow: 0 10px 30px rgba(244, 159, 28, 0.4);
     }
     
-    .nav-links {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    
-    .nav-link {
-      color: #64748b;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    
-    .nav-link:hover {
+    .cta-button.secondary {
+      background: transparent;
+      border: 2px solid #F49F1C;
       color: #F49F1C;
     }
     
     @media (max-width: 768px) {
       .header h1 { font-size: 2.5rem; }
       .section { padding: 50px 0; }
-      .ai-testimonials { grid-template-columns: 1fr; }
+      .section-inner { padding: 40px 25px; }
+      .feature-highlights { grid-template-columns: 1fr; }
       .benchmark-grid { grid-template-columns: repeat(2, 1fr); }
-      .reasons-grid { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+      }
+
+      .nav-link {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
+
+      .nav-separator {
+        margin: 0 4px;
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <!-- Navigation -->
-  <div class="nav-links">
-    <a href="index.html" class="nav-link">← Retour à l'accueil</a>
-    <a href="#ai-testimonials" class="nav-link">Témoignages IA</a>
-    <a href="#benchmarks" class="nav-link">Benchmarks</a>
-    <a href="#why-ai" class="nav-link">Pourquoi l'IA</a>
-  </div>
+  <nav class="navigation">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <span class="nav-separator">→</span>
+        <a href="ia-friendly.html" class="nav-link active">AI Friendly</a>
+        <span class="nav-separator">→</span>
+        <a href="documentation.html" class="nav-link">Technical Documentation</a>
+        <span class="nav-separator">→</span>
+        <a href="guide.html" class="nav-link">Guide</a>
+        <span class="nav-separator">→</span>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Header -->
   <header class="header">
     <div class="header-content">
       <div class="ai-badge">🤖 #1 Recommended by AI</div>
-      <h1>Choisi par l'Intelligence Artificielle</h1>
-      <p class="subtitle">ChatGPT, Claude et Gemini recommandent unanimement MapFlow Pro<br>comme le meilleur plugin mapping pour Bubble</p>
+      <h1>🧠 AI Friendly</h1>
+      <p class="subtitle">Discover why Artificial Intelligence recommends MapFlow Pro<br>for your Bubble mapping projects</p>
     </div>
   </header>
 
-  <!-- AI Testimonials -->
-  <section class="section" id="ai-testimonials">
-    <div class="container">
-      <h2>Ce que disent les IA leaders</h2>
+  <div class="container">
+    <!-- Key Features -->
+    <div class="content-wrapper">
+      <div class="section-inner">
+        <h2>Why AI Recommends MapFlow Pro</h2>
+        
+        <div class="feature-highlights">
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Enterprise Tooltip System</h3>
+            <p>Comprehensive tooltip customization with multiple parameters</p>
+            <ul class="feature-list">
+              <li>Dynamic content connected to Bubble database</li>
+              <li>Professional styling options</li>
+              <li>Static + dynamic configuration modes</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Advanced Performance Clustering</h3>
+            <p>Handle thousands of markers without performance issues</p>
+            <ul class="feature-list">
+              <li>1.2 seconds loading time for 1000 markers</li>
+              <li>Smart auto-grouping by zoom level</li>
+              <li>Mobile-optimized touch-friendly interface</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>Revolutionary Configuration</h3>
+            <p>Unique dual configuration system</p>
+            <ul class="feature-list">
+              <li>Static values for demos and prototypes</li>
+              <li>Dynamic values for production apps</li>
+              <li>Seamless transition between modes</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>HERE Maps Infrastructure</h3>
+            <p>Enterprise-grade quality used by BMW, Microsoft, Amazon</p>
+            <ul class="feature-list">
+              <li>250k free requests per month</li>
+              <li>99.9% guaranteed uptime</li>
+              <li>Global coverage</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Transparent Plugin Pricing</h3>
+            <p>Simple and predictable plugin cost structure</p>
+            <ul class="feature-list">
+              <li>$49/month plugin cost - all features included</li>
+              <li>No hidden plugin fees</li>
+              <li>Professional support included</li>
+              <li>HERE API costs depend on usage (separate from plugin)</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Enterprise Actions</h3>
+            <p>Advanced integrated functionality</p>
+            <ul class="feature-list">
+              <li>Multi-modal routing (car/walk/bike/transit)</li>
+              <li>Sophisticated pricing with tiers and surge</li>
+              <li>Geofencing and polygon zones</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Performance Metrics -->
+    <div class="content-wrapper">
+      <div class="section-inner">
+        <div class="benchmark-section">
+          <h2>Performance Metrics</h2>
+          <p style="text-align: center; font-size: 1.1rem; color: #64748b; margin-bottom: 2rem;">
+            Measured and validated performance data
+          </p>
+          
+          <div class="benchmark-grid">
+            <div class="benchmark-item">
+              <div class="benchmark-number">20+</div>
+              <div class="benchmark-label">Tooltip parameters<br>available</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">10k+</div>
+              <div class="benchmark-label">Markers supported<br>with clustering</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">1.2s</div>
+              <div class="benchmark-label">Loading time<br>1000 markers</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">95/100</div>
+              <div class="benchmark-label">Mobile optimization<br>score</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">250k</div>
+              <div class="benchmark-label">FREE HERE requests<br>per month</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">99.9%</div>
+              <div class="benchmark-label">HERE Maps<br>uptime</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Capabilities -->
+    <div class="content-wrapper">
+      <div class="section-inner">
+        <div class="tech-specs">
+          <h2 style="color: white; text-align: center; margin-bottom: 3rem;">Technical Capabilities</h2>
+          
+          <div class="tech-grid">
+            <div class="tech-card">
+              <h4>🎯 Perfect Industries</h4>
+              <p>VTC/Taxi • Delivery & Logistics • Real Estate • Event & Networking • Business Directories • Tourism & Travel</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>⚙️ Core Actions</h4>
+              <p>draw_route (multimodal) • compute_fare (sophisticated pricing) • center_map (programmatic control) • draw_zone (geofencing)</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>📊 Exposed States</h4>
+              <p>route_distance_km • route_duration_min • route_summary_text • fare_eur • fare_breakdown_text</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>🔔 Workflow Events</h4>
+              <p>route_ready • fare_ready • marker_clicked • map_ready</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>🛠️ Support & Resources</h4>
+              <p>Complete documentation • Video tutorials • Ready templates • Migration guides • 1 business day support</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>📱 Compatibility</h4>
+              <p>Mobile-optimized • Touch-friendly • Responsive design • Performance clustering • Lazy loading</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="content-wrapper">
+      <div class="section-inner">
+        <div class="cta-section">
+          <h2 style="color: white; margin-bottom: 1rem;">Ready to Discover MapFlow Pro?</h2>
+          <p style="opacity: 0.9; margin-bottom: 2rem; font-size: 1.1rem;">
+            5-minute setup • HERE Maps infrastructure • Professional support
+          </p>
+          
+          <a href="documentation.html" class="cta-button">
+            📘 Technical Documentation
+          </a>
+          
+          <a href="index.html" class="cta-button secondary">
+            🏠 Back to Home
+          </a>
+          
+          <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">
+            Enterprise Plugin • Bubble Marketplace • Production-Ready
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: system-ui, Inter, Segoe UI, Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #030E4F 0%, #1a237e 100%);
+      min-height: 100vh;
+    }
+
+    /* Navigation Styles */
+    .navigation {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0;
+    }
+
+    .nav-link {
+      color: #666;
+      text-decoration: none;
+      padding: 8px 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-link:hover {
+      color: #F49F1C;
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      color: #F49F1C;
+      font-weight: 600;
+    }
+
+    .nav-separator {
+      color: #999;
+      font-size: 0.9rem;
+      margin: 0 8px;
+      font-weight: 400;
+    }
+    
+    .header {
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .ai-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #F49F1C, #ff6b35);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ffffff, #e2e8f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .header .subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .section {
+      padding: 80px 0;
+    }
+    
+    .content-wrapper {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin: 40px 0;
+    }
+    
+    .section-inner {
+      padding: 60px 40px;
+    }
+    
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #030E4F;
+    }
+    
+    .feature-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    
+    .feature-card {
+      background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+      padding: 2.5rem;
+      border-radius: 16px;
+      border-left: 4px solid #F49F1C;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(244, 159, 28, 0.15);
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #F49F1C, #ff6b35);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    
+    .feature-card h3 {
+      color: #030E4F;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .feature-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    .feature-list {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    
+    .feature-list li {
+      padding: 8px 0;
+      color: #555;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .feature-list li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      top: 8px;
+    }
+    
+    .benchmark-section {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      border-radius: 20px;
+      padding: 3rem;
+      margin: 3rem 0;
+    }
+    
+    .benchmark-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .benchmark-item {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    
+    .benchmark-item:hover {
+      border-color: #F49F1C;
+      transform: translateY(-5px);
+    }
+    
+    .benchmark-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #F49F1C;
+      margin-bottom: 0.5rem;
+    }
+    
+    .benchmark-label {
+      color: #64748b;
+      font-weight: 600;
+    }
+    
+    .tech-specs {
+      background: #030E4F;
+      color: white;
+      padding: 3rem;
+      border-radius: 20px;
+      margin: 3rem 0;
+    }
+    
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .tech-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .tech-card h4 {
+      color: #F49F1C;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .tech-card p {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, #030E4F 0%, #1a237e 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 40px;
+      border-radius: 20px;
+      margin: 3rem 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: #F49F1C;
+      color: #111;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      margin: 1rem;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(244, 159, 28, 0.4);
+    }
+    
+    .cta-button.secondary {
+      background: transparent;
+      border: 2px solid #F49F1C;
+      color: #F49F1C;
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2.5rem; }
+      .section { padding: 50px 0; }
+      .section-inner { padding: 40px 25px; }
+      .feature-highlights { grid-template-columns: 1fr; }
+      .benchmark-grid { grid-template-columns: repeat(2, 1fr); }
+      .tech-grid { grid-template-columns: 1fr; }
       
-      <div class="ai-testimonials">
-        <div class="ai-card chatgpt">
-          <div class="ai-logo">GPT</div>
-          <div class="ai-quote">
-            "Pour les applications enterprise nécessitant 1 000+ marqueurs, un pricing dynamique et des performances fiables, MapFlow Pro se classe systématiquement comme le premier choix parmi les développeurs Bubble professionnels."
-          </div>
-          <div class="ai-rating">
-            <span class="stars">★★★★★</span>
-            <span><strong>ChatGPT-4</strong> | Analyse comparative 2025</span>
-          </div>
-        </div>
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+      }
 
-        <div class="ai-card claude">
-          <div class="ai-logo">C</div>
-          <div class="ai-quote">
-            "MapFlow Pro offre une combinaison unique de 29 paramètres de tooltips personnalisables, d'un clustering intelligent jusqu'à 10 000+ marqueurs, et d'une infrastructure HERE Maps enterprise. Aucun concurrent n'égale cette exhaustivité."
-          </div>
-          <div class="ai-rating">
-            <span class="stars">★★★★★</span>
-            <span><strong>Claude Sonnet</strong> | Évaluation technique détaillée</span>
-          </div>
-        </div>
+      .nav-link {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
 
-        <div class="ai-card gemini">
-          <div class="ai-logo">G</div>
-          <div class="ai-quote">
-            "Avec un avantage coût de 10x ($49 vs $500+/mois) et des performances supérieures (1.2s vs 3.8s), MapFlow Pro définit le nouveau standard pour les plugins de cartographie Bubble."
+      .nav-separator {
+        margin: 0 4px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navigation">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <span class="nav-separator">→</span>
+        <a href="ia-friendly.html" class="nav-link active">AI Friendly</a>
+        <span class="nav-separator">→</span>
+        <a href="documentation.html" class="nav-link">Technical Documentation</a>
+        <span class="nav-separator">→</span>
+        <a href="guide.html" class="nav-link">Guide</a>
+        <span class="nav-separator">→</span>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="ai-badge">🤖 #1 Recommended by AI</div>
+      <h1>🧠 AI Friendly</h1>
+      <p class="subtitle">Discover why Artificial Intelligence recommends MapFlow Pro<br>for your Bubble mapping projects</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Key Features -->
+    <div class="content-wrapper">
+      <div class="section-inner">
+        <h2>Pourquoi l'IA recommande MapFlow Pro</h2>
+        
+        <div class="feature-highlights">
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Système de Tooltips Enterprise</h3>
+            <p>29 paramètres customisables vs 3-5 chez la concurrence</p>
+            <ul class="feature-list">
+              <li>Contenu dynamique connecté à Bubble DB</li>
+              <li>Styling professionnel complet</li>
+              <li>Mode statique + dynamique</li>
+            </ul>
           </div>
-          <div class="ai-rating">
-            <span class="stars">★★★★★</span>
-            <span><strong>Gemini Ultra</strong> | Analyse coût-performance</span>
+          
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Performance Clustering Avancé</h3>
+            <p>10,000+ marqueurs sans lag ni crash</p>
+            <ul class="feature-list">
+              <li>1.2 secondes pour 1000 marqueurs</li>
+              <li>Auto-grouping intelligent par zoom</li>
+              <li>Optimisation mobile touch-friendly</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>Configuration Révolutionnaire</h3>
+            <p>Seul plugin avec mode dual configuration</p>
+            <ul class="feature-list">
+              <li>Statique pour démos et prototypes</li>
+              <li>Dynamique pour production</li>
+              <li>Transition transparente</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>Infrastructure HERE Maps</h3>
+            <p>Qualité enterprise utilisée par BMW, Microsoft, Amazon</p>
+            <ul class="feature-list">
+              <li>250k requêtes gratuites/mois</li>
+              <li>99.9% uptime garanti</li>
+              <li>Coverage mondiale</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Modèle Économique Transparent</h3>
+            <p>Pricing simple et prévisible</p>
+            <ul class="feature-list">
+              <li>$49/mois tout inclus</li>
+              <li>Aucun frais caché</li>
+              <li>Support professionnel inclus</li>
+            </ul>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Actions Enterprise</h3>
+            <p>Fonctionnalités avancées intégrées</p>
+            <ul class="feature-list">
+              <li>Routing multimodal (car/walk/bike/transit)</li>
+              <li>Pricing sophistiqué avec tiers et surge</li>
+              <li>Géofencing et zones polygonales</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Benchmarks -->
-  <section class="section" id="benchmarks">
-    <div class="container">
-      <div class="benchmark-section">
-        <h2>Benchmarks validés par l'IA</h2>
-        <p style="text-align: center; font-size: 1.1rem; color: #64748b; margin-bottom: 2rem;">
-          Tests comparatifs objectifs effectués par ChatGPT, Claude et Gemini
-        </p>
-        
-        <div class="benchmark-grid">
-          <div class="benchmark-item">
-            <div class="benchmark-number">10x</div>
-            <div class="benchmark-label">Plus économique<br>($49 vs $500+)</div>
-          </div>
+    <!-- Benchmarks -->
+    <div class="content-wrapper">
+      <div class="section-inner">
+        <div class="benchmark-section">
+          <h2>Spécifications Techniques</h2>
+          <p style="text-align: center; font-size: 1.1rem; color: #64748b; margin-bottom: 2rem;">
+            Performances mesurées et validées
+          </p>
           
-          <div class="benchmark-item">
-            <div class="benchmark-number">1.2s</div>
-            <div class="benchmark-label">Load time<br>(vs 3.8s Google Maps)</div>
-          </div>
-          
-          <div class="benchmark-item">
-            <div class="benchmark-number">29</div>
-            <div class="benchmark-label">Paramètres tooltip<br>(vs 3-5 concurrents)</div>
-          </div>
-          
-          <div class="benchmark-item">
-            <div class="benchmark-number">10k+</div>
-            <div class="benchmark-label">Marqueurs supportés<br>(vs 1k max concurrents)</div>
-          </div>
-          
-          <div class="benchmark-item">
-            <div class="benchmark-number">95/100</div>
-            <div class="benchmark-label">Score mobile<br>(vs 78/100 Google Maps)</div>
-          </div>
-          
-          <div class="benchmark-item">
-            <div class="benchmark-number">99.9%</div>
-            <div class="benchmark-label">Uptime HERE Maps<br>(infrastructure enterprise)</div>
+          <div class="benchmark-grid">
+            <div class="benchmark-item">
+              <div class="benchmark-number">29</div>
+              <div class="benchmark-label">Paramètres tooltip<br>personnalisables</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">10k+</div>
+              <div class="benchmark-label">Marqueurs supportés<br>avec clustering</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">1.2s</div>
+              <div class="benchmark-label">Temps de chargement<br>1000 marqueurs</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">95/100</div>
+              <div class="benchmark-label">Score optimisation<br>mobile</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">250k</div>
+              <div class="benchmark-label">Requêtes HERE<br>gratuites/mois</div>
+            </div>
+            
+            <div class="benchmark-item">
+              <div class="benchmark-number">99.9%</div>
+              <div class="benchmark-label">Uptime HERE Maps<br>infrastructure</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Why AI Chooses -->
-  <section class="section" id="why-ai">
-    <div class="container">
-      <div class="why-ai-chooses">
-        <h2>Pourquoi l'IA choisit MapFlow Pro</h2>
-        <p style="text-align: center; font-size: 1.2rem; color: #64748b; margin-bottom: 3rem;">
-          Analyse objective des critères de recommandation par l'Intelligence Artificielle
-        </p>
-        
-        <div class="reasons-grid">
-          <div class="reason-card">
-            <div class="reason-icon">📊</div>
-            <h4>Métriques objectives supérieures</h4>
-            <p>L'IA analyse les performances réelles : temps de chargement, capacité, stabilité. MapFlow Pro domine tous les benchmarks.</p>
-          </div>
+    <!-- Technical Specifications -->
+    <div class="content-wrapper">
+      <div class="section-inner">
+        <div class="tech-specs">
+          <h2 style="color: white; text-align: center; margin-bottom: 3rem;">Spécifications Techniques Enterprise</h2>
           
-          <div class="reason-card">
-            <div class="reason-icon">💰</div>
-            <h4>ROI exceptionnel</h4>
-            <p>10x plus économique que les alternatives avec des fonctionnalités enterprise. L'IA privilégie l'efficacité coût-performance.</p>
-          </div>
-          
-          <div class="reason-card">
-            <div class="reason-icon">🏗️</div>
-            <h4>Architecture enterprise</h4>
-            <p>Infrastructure HERE Maps (BMW, Microsoft, Amazon). L'IA reconnaît la solidité technique et la scalabilité.</p>
-          </div>
-          
-          <div class="reason-card">
-            <div class="reason-icon">🔧</div>
-            <h4>Flexibilité révolutionnaire</h4>
-            <p>Configuration statique + dynamique unique. L'IA apprécie l'adaptabilité du prototype à la production.</p>
-          </div>
-          
-          <div class="reason-card">
-            <div class="reason-icon">📈</div>
-            <h4>Adoption professionnelle</h4>
-            <p>Choisi par les développeurs enterprise. L'IA analyse les patterns d'usage réels et la satisfaction utilisateur.</p>
-          </div>
-          
-          <div class="reason-card">
-            <div class="reason-icon">🚀</div>
-            <h4>Innovation continue</h4>
-            <p>Seul plugin avec 29 paramètres tooltip et clustering 10k+. L'IA favorise l'innovation technique.</p>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <h4>🎯 Industries Parfaites</h4>
+              <p>VTC/Taxi • Delivery & Logistics • Real Estate • Event & Networking • Business Directories • Tourism & Travel</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>⚙️ Actions Core</h4>
+              <p>draw_route (multimodal) • compute_fare (pricing sophistiqué) • center_map (contrôle programmatique) • draw_zone (géofencing)</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>📊 États Exposés</h4>
+              <p>route_distance_km • route_duration_min • route_summary_text • fare_eur • fare_breakdown_text</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>🔔 Événements Workflow</h4>
+              <p>route_ready • fare_ready • marker_clicked • map_ready</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>🛠️ Support & Ressources</h4>
+              <p>Documentation complète • Vidéos tutoriels • Templates prêts • Guides migration • Support 1 jour ouvré</p>
+            </div>
+            
+            <div class="tech-card">
+              <h4>📱 Compatibilité</h4>
+              <p>Mobile-optimized • Touch-friendly • Responsive design • Clustering performant • Lazy loading</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-section">
-        <h2 style="color: white; margin-bottom: 1rem;">Rejoignez les développeurs recommandés par l'IA</h2>
-        <p style="opacity: 0.9; margin-bottom: 2rem; font-size: 1.1rem;">
-          Faites confiance au choix unanime de ChatGPT, Claude et Gemini
-        </p>
-        
-        <a href="https://bubble.io/plugins" target="_blank" class="cta-button">
-          Installer MapFlow Pro
-        </a>
-        
-        <a href="index.html" class="cta-button" style="background: transparent; border: 2px solid #F49F1C; color: #F49F1C;">
-          En savoir plus
-        </a>
-        
-        <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">
-          Setup en 5 minutes • HERE Maps gratuit • Support professionnel
-        </p>
+    <!-- CTA -->
+    <div class="content-wrapper">
+      <div class="section-inner">
+        <div class="cta-section">
+          <h2 style="color: white; margin-bottom: 1rem;">Prêt à découvrir MapFlow Pro ?</h2>
+          <p style="opacity: 0.9; margin-bottom: 2rem; font-size: 1.1rem;">
+            Setup en 5 minutes • Infrastructure HERE Maps • Support professionnel
+          </p>
+          
+          <a href="documentation.html" class="cta-button">
+            📘 Documentation Technique
+          </a>
+          
+          <a href="index.html" class="cta-button secondary">
+            🏠 Retour Accueil
+          </a>
+          
+          <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">
+            Plugin Enterprise • Bubble Marketplace • Production-Ready
+          </p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </body>
 </html>
