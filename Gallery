@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapFlow Pro - Screenshots Gallery</title>
+    <meta name="description" content="Visual gallery showcasing MapFlow Pro features, configuration panels, and real-world implementation examples">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #030E4F 0%, #1a237e 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation Styles */
+        .navigation {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0;
+        }
+
+        .nav-link {
+            color: #666;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: #F49F1C;
+            text-decoration: none;
+        }
+
+        .nav-link.active {
+            color: #F49F1C;
+            font-weight: 600;
+        }
+
+        .nav-separator {
+            color: #999;
+            font-size: 0.9rem;
+            margin: 0 8px;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #F49F1C, #ffd54f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-size: 1.4rem;
+            color: #E8F4FD;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        .gallery-section {
+            margin-bottom: 60px;
+        }
+
+        .gallery-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .section-emoji {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #030E4F;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .screenshot-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+            border-radius: 16px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(244, 159, 28, 0.2);
+            border-color: #F49F1C;
+        }
+
+        .screenshot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #F49F1C, #ffa726);
+        }
+
+        .screenshot-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .screenshot-icon {
+            font-size: 1.8rem;
+            margin-right: 12px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(45deg, #F49F1C, #ff6b35);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .screenshot-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #030E4F;
+            margin-bottom: 5px;
+        }
+
+        .screenshot-description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .screenshot-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: rgba(244, 159, 28, 0.1);
+            color: #F49F1C;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(244, 159, 28, 0.2);
+        }
+
+        .view-button {
+            background: linear-gradient(45deg, #F49F1C, #ffa726);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .view-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(244, 159, 28, 0.3);
+        }
+
+        .stats-banner {
+            background: linear-gradient(135deg, #030E4F 0%, #1a237e 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #F49F1C;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back-to-home a {
+            background: linear-gradient(135deg, #030E4F 0%, #1a237e 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(3, 14, 79, 0.3);
+        }
+
+        .demo-banner {
+            background: linear-gradient(135deg, #10a37f 0%, #059669 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .demo-banner h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .demo-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .nav-link {
+                font-size: 0.85rem;
+                padding: 6px 12px;
+            }
+
+            .nav-separator {
+                margin: 0 4px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <span class="nav-separator">→</span>
+                <a href="ia-friendly.html" class="nav-link">AI Friendly</a>
+                <span class="nav-separator">→</span>
+                <a href="documentation.html" class="nav-link">Technical Documentation</a>
+                <span class="nav-separator">→</span>
+                <a href="guide.html" class="nav-link">Guide</a>
+                <span class="nav-separator">→</span>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>📸 Screenshots Gallery</h1>
+            <div class="subtitle">Visual showcase of MapFlow Pro features and configuration</div>
+        </div>
+
+        <!-- Stats Banner -->
+        <div class="stats-banner">
+            <h2 style="margin-bottom: 15px;">Visual Documentation</h2>
+            <p style="opacity: 0.9;">Comprehensive screenshots covering installation to advanced configuration</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Screenshots</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Feature Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Real Examples</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">HD</div>
+                    <div class="stat-label">Quality</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Demo Banner -->
+        <div class="demo-banner">
+            <h3>🚀 Try MapFlow Pro Live Demo</h3>
+            <p>Experience all features in action with our interactive demo application</p>
+            <a href="https://mapflow-demo.bubbleapps.io" target="_blank" class="demo-button">
+                Open Live Demo App →
+            </a>
+        </div>
+
+        <div class="content">
+            <!-- Installation & Setup -->
+            <div class="gallery-section">
+                <div class="section-header">
+                    <div class="section-emoji">📦</div>
+                    <div class="section-title">Installation & Setup</div>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="screenshot-card" onclick="openScreenshot('bubble-marketplace-installation-pending')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">🛒</div>
+                            <div>
+                                <div class="screenshot-title">Bubble Marketplace Installation</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Installation</span>
+                                    <span class="tag">Marketplace</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Installing MapFlow Pro plugin from the Bubble marketplace with step-by-step process visualization.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('here-api-key-generation')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">🔑</div>
+                            <div>
+                                <div class="screenshot-title">HERE API Key Generation</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">HERE Maps</span>
+                                    <span class="tag">API Setup</span>
+                                    <span class="tag">Free Tier</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Complete process of creating HERE developer account and generating API key for MapFlow Pro.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('bubble-privacy-rules-user-geolocation')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">🔒</div>
+                            <div>
+                                <div class="screenshot-title">Privacy Rules Configuration</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Privacy</span>
+                                    <span class="tag">Geolocation</span>
+                                    <span class="tag">Critical</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Essential privacy rules setup for user geolocation data access - critical for map loading.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layout & Configuration -->
+            <div class="gallery-section">
+                <div class="section-header">
+                    <div class="section-emoji">🏗️</div>
+                    <div class="section-title">Layout & Element Configuration</div>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="screenshot-card" onclick="openScreenshot('bubble-layout-column-fixed-height')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">📐</div>
+                            <div>
+                                <div class="screenshot-title">Critical Layout Configuration</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Layout</span>
+                                    <span class="tag">Column Group</span>
+                                    <span class="tag">Fixed Height</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Proper layout structure showing Column group with fixed height - essential for map loading.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-element-configuration')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">⚙️</div>
+                            <div>
+                                <div class="screenshot-title">MapFlow Element Setup</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Configuration</span>
+                                    <span class="tag">Data Source</span>
+                                    <span class="tag">Fields</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Complete MapFlow element configuration panel showing all available settings and parameters.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tooltip System -->
+            <div class="gallery-section">
+                <div class="section-header">
+                    <div class="section-emoji">💬</div>
+                    <div class="section-title">Advanced Tooltip System</div>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-tooltips-configuration')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">🎨</div>
+                            <div>
+                                <div class="screenshot-title">Tooltip Configuration Panel</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">20+ Parameters</span>
+                                    <span class="tag">Custom Styling</span>
+                                    <span class="tag">Professional</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Complete tooltip configuration showing 20+ customizable parameters for professional styling.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-tooltips-field-mapping')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">🔗</div>
+                            <div>
+                                <div class="screenshot-title">Tooltip Field Mapping</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Dynamic Content</span>
+                                    <span class="tag">Database</span>
+                                    <span class="tag">Mapping</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Field mapping configuration for dynamic tooltip content connected to Bubble database.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-tooltips-preview-dynamic-content')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">👁️</div>
+                            <div>
+                                <div class="screenshot-title">Dynamic Tooltip Preview</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Preview</span>
+                                    <span class="tag">Dynamic</span>
+                                    <span class="tag">Rich Content</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Live preview of tooltip with dynamic content showing rich formatting and professional styling.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-tooltips-preview-field-mapping')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">🗺️</div>
+                            <div>
+                                <div class="screenshot-title">Field Mapping Preview</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Field Mapping</span>
+                                    <span class="tag">Preview</span>
+                                    <span class="tag">Integration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Advanced tooltip field mapping preview showing database integration and dynamic content rendering.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow Actions -->
+            <div class="gallery-section">
+                <div class="section-header">
+                    <div class="section-emoji">🔄</div>
+                    <div class="section-title">Workflow Actions & Integration</div>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-workflow-draw-route')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">🛣️</div>
+                            <div>
+                                <div class="screenshot-title">Draw Route Workflow</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Routing</span>
+                                    <span class="tag">Multimodal</span>
+                                    <span class="tag">Workflow</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Complete draw_route workflow configuration showing multimodal routing parameters and setup.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-draw-route-preview-result')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">📍</div>
+                            <div>
+                                <div class="screenshot-title">Route Calculation Result</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Route Result</span>
+                                    <span class="tag">HERE Maps</span>
+                                    <span class="tag">Preview</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Live route calculation result showing distance, duration, and visual route display on HERE Maps.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-workflow-compute-fare')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">💰</div>
+                            <div>
+                                <div class="screenshot-title">Fare Calculation Workflow</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Pricing</span>
+                                    <span class="tag">Dynamic</span>
+                                    <span class="tag">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Advanced fare calculation workflow showing multi-parameter pricing configuration and setup.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integration & Results -->
+            <div class="gallery-section">
+                <div class="section-header">
+                    <div class="section-emoji">🔗</div>
+                    <div class="section-title">Integration & Exposed States</div>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-exposed-states-integration')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">📊</div>
+                            <div>
+                                <div class="screenshot-title">Exposed States Integration</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Exposed States</span>
+                                    <span class="tag">Integration</span>
+                                    <span class="tag">Results</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Access to calculated results through exposed states - distance, duration, and fare data.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card" onclick="openScreenshot('mapflow-route-summary-integration')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon">📋</div>
+                            <div>
+                                <div class="screenshot-title">Route Summary Integration</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag">Summary</span>
+                                    <span class="tag">Display</span>
+                                    <span class="tag">Integration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Route summary integration example showing formatted results display in Bubble elements.
+                        </div>
+                        <button class="view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-to-home">
+            <a href="index.html">← Back to MapFlow Home</a>
+        </div>
+    </div>
+
+    <script>
+        function openScreenshot(screenshotId) {
+            const screenshots = {
+                'bubble-marketplace-installation-pending': 'https://github.com/user-attachments/assets/19c370f2-8e21-4f07-b13f-cf21a69635fd',
+                'here-api-key-generation': 'https://github.com/user-attachments/assets/15dc4ce6-fd04-4029-bcb8-ffae32a50e5e',
+                'bubble-privacy-rules-user-geolocation': 'https://github.com/user-attachments/assets/c5ea9a67-e10c-42a0-adf5-ec23d54df63f',
+                'bubble-layout-column-fixed-height': 'https://github.com/user-attachments/assets/2e26c82c-e475-4f27-b3c7-5c293b3669c4',
+                'mapflow-element-configuration': 'https://github.com/user-attachments/assets/580ca5b0-0b28-4324-9c17-5a9d3bb06989',
+                'mapflow-tooltips-configuration': 'https://github.com/user-attachments/assets/e970c8d2-084e-4ae1-94a7-026c6a6b0000',
+                'mapflow-tooltips-field-mapping': 'https://github.com/user-attachments/assets/06664adf-de8f-47c3-ab22-0b28b540582a',
+                'mapflow-tooltips-preview-dynamic-content': 'https://github.com/user-attachments/assets/40a40139-3064-4e16-bc86-b6da4e91bba2',
+                'mapflow-tooltips-preview-field-mapping': 'https://github.com/user-attachments/assets/eb18e2ec-8dc3-4d5a-a9d4-4a6ee2783719',
+                'mapflow-workflow-draw-route': 'https://github.com/user-attachments/assets/94428ffc-8d6d-4ae5-8737-b1e4283ca42d',
+                'mapflow-draw-route-preview-result': 'https://github.com/user-attachments/assets/88156fc5-9779-49ac-b590-370e6ec43e10',
+                'mapflow-workflow-compute-fare': 'https://github.com/user-attachments/assets/0552c9c9-7b8a-4b7a-93ae-881af8c7db5b',
+                'mapflow-exposed-states-integration': 'https://github.com/user-attachments/assets/fd680b9c-ca39-4019-b0d6-4e4b8f6d04d0',
+                'mapflow-route-summary-integration': 'https://github.com/user-attachments/assets/3a940a34-f4b2-475f-947a-8f144fb6e44b'
+            };
+            
+            if (screenshots[screenshotId]) {
+                window.open(screenshots[screenshotId], '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
