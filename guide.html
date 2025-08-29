@@ -507,4 +507,349 @@
                     </div>
                     <div class="v2-screenshot-link" onclick="openScreenshot('bubble-v2-templates-config')">
                         📸 Configuration des templates
-                        <span class="click-hint">
+                        <span class="click-hint">👆 Cliquez pour voir</span>
+                    </div>
+                    <div class="v2-screenshot-link" onclick="openScreenshot('bubble-v2-templates-preview-tooltip')">
+                        📸 Aperçu des tooltips dynamiques
+                        <span class="click-hint">👆 Cliquez pour voir</span>
+                    </div>
+
+                    <h3>3. Icônes SVG Personnalisées</h3>
+                    <p>Choisissez parmi 3 formes d'icônes professionnelles pour vos marqueurs. Les bordures noires s'ajoutent automatiquement pour une meilleure visibilité.</p>
+                    <div class="code-block">
+                        <span class="property">enable_custom_icon:</span> <span class="value">"yes"</span>
+                        <span class="property">marker_icon_mode:</span> <span class="value">"shape"</span>
+                        <span class="property">marker_icon_shape:</span> <span class="value">"circle"</span> <span class="comment">// Options: "pin", "circle", "square"</span>
+                        <span class="property">marker_icon_size:</span> <span class="value">52</span>
+                    </div>
+                    <div class="v2-screenshot-link" onclick="openScreenshot('bubble-v2-icons-config-shapes')">
+                        📸 Configuration des formes d'icônes
+                        <span class="click-hint">👆 Cliquez pour voir</span>
+                    </div>
+                    <div class="v2-screenshot-link" onclick="openScreenshot('bubble-v2-icons-circles-preview')">
+                        📸 Aperçu des icônes de cercle
+                        <span class="click-hint">👆 Cliquez pour voir</span>
+                    </div>
+
+                    <h3>4. Tooltip Themes Dynamiques</h3>
+                    <p>Donnez un style supplémentaire à vos tooltips en changeant leur couleur de fond selon les données de vos marqueurs. Idéal pour harmoniser le design avec vos catégories.</p>
+                    <div class="code-block">
+                        <span class="property">enable_tooltip_theme_map:</span> <span class="value">"yes"</span>
+                        <span class="property">tooltip_theme_field:</span> <span class="value">"activity"</span>
+                        <span class="property">tooltip_colors_json:</span> <span class="value">{"startup":"#10b981", "consulting":"#f59e0b"}</span>
+                    </div>
+                    <div class="v2-screenshot-link" onclick="openScreenshot('bubble-v2-tooltip-themes-config')">
+                        📸 Configuration des thèmes de tooltips
+                        <span class="click-hint">👆 Cliquez pour voir</span>
+                    </div>
+                    <div class="v2-screenshot-link" onclick="openScreenshot('bubble-v2-tooltip-themes-preview')">
+                        📸 Aperçu des tooltips colorés
+                        <span class="click-hint">👆 Cliquez pour voir</span>
+                    </div>
+
+                    <h3>5. Mode Clickable Only</h3>
+                    <p>Pour optimiser la performance sur les cartes avec de nombreux marqueurs, ce mode désactive le survol (<code>hover</code>) et ne conserve que les événements de clic.</p>
+                    <div class="code-block">
+                        <span class="property">clickable_only:</span> <span class="value">"yes"</span>
+                    </div>
+                </div>
+            </div>
+            
+                        <div class="guide-section">
+                <div class="section-header">
+                    <div class="section-emoji">📦</div>
+                    <div class="section-title">Installation & Initial Setup</div>
+                </div>
+                <div class="section-content">
+                    <h3>Step 1: Install MapFlow Pro Plugin</h3>
+                    
+                    <div class="screenshot-link" onclick="openScreenshot('bubble-marketplace-installation-pending')">
+                        📸 Screenshot: MapFlow Pro installation from Bubble marketplace
+                        <span class="click-hint">👆 Click to view</span>
+                    </div>
+
+                    <ol class="steps-list">
+                        <li>Go to your Bubble app editor</li>
+                        <li>Navigate to Plugins tab</li>
+                        <li>Click "Add plugins"</li>
+                        <li>Search for "MapFlow Pro"</li>
+                        <li>Click "Install" and accept the plugin</li>
+                    </ol>
+
+                    <h3>Step 2: Get HERE Maps API Key</h3>
+                    
+                    <div class="screenshot-link" onclick="openScreenshot('here-api-key-generation')">
+                        📸 Screenshot: HERE API key generation process
+                        <span class="click-hint">👆 Click to view</span>
+                    </div>
+
+                    <ol class="steps-list">
+                        <li>Visit <a href="https://developer.here.com" target="_blank" style="color: #F49F1C;">developer.here.com</a></li>
+                        <li>Create a FREE HERE developer account</li>
+                        <li>Create a new project</li>
+                        <li>Generate an API key</li>
+                        <li>Copy the API key for Bubble configuration</li>
+                    </ol>
+
+                    <div class="alert">
+                        <div class="alert-title">💡 HERE Free Tier</div>
+                        <p>HERE provides 250,000 free requests per month, which covers most applications. No credit card required for the free tier.</p>
+                    </div>
+
+                    <h3>Step 3: Configure Privacy Rules</h3>
+                    
+                    <div class="screenshot-link" onclick="openScreenshot('bubble-privacy-rules-user-geolocation')">
+                        📸 Screenshot: Privacy rules configuration for user geolocation
+                        <span class="click-hint">👆 Click to view</span>
+                    </div>
+
+                    <div class="warning">
+                        <div class="warning-title">⚠️ Critical: Privacy Rules Setup</div>
+                        <p>If your map doesn't load or shows no data, privacy rules are often the cause. Ensure your data types have proper privacy rules configured:</p>
+                        <ul>
+                            <li>Allow "Everyone" to view location fields (lat, lng) if using public data</li>
+                            <li>Or configure specific privacy rules for your user type</li>
+                            <li>Check that geographic address fields are accessible</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="guide-section">
+                <div class="section-header">
+                    <div class="section-emoji">🏗️</div>
+                    <div class="section-title">Critical Layout Configuration</div>
+                </div>
+                <div class="section-content">
+                    <h3>Essential Layout Requirements</h3>
+                    
+                    <div class="screenshot-link" onclick="openScreenshot('bubble-layout-column-fixed-height')">
+                        📸 Screenshot: Correct layout configuration - Column group with fixed height
+                        <span class="click-hint">👆 Click to view</span>
+                    </div>
+
+                    <div class="warning">
+                        <div class="warning-title">🚨 Layout Critical Issue</div>
+                        <p><strong>The map will NOT load properly if not placed in a Column group with fixed height.</strong> This is the most common configuration error.</p>
+                    </div>
+
+                    <h3>Correct Layout Structure</h3>
+                    
+                    <div class="code-block">
+Page Layout
+└── Column Group (container for map)
+    ├── Make this element fixed-height: <span class="value">ON</span>
+    ├── Min height: <span class="value">600-800px</span>
+    ├── Fit height to content: <span class="value">OFF</span>
+    ├── Make this element fixed-width: <span class="value">OFF</span>
+    └── MapFlow Element (inside this column)
+                    </div>
+
+                    <h3>Layout Settings Checklist</h3>
+                    
+                    <ol class="steps-list">
+                        <li><strong>Container Group:</strong> Use Column (not Row) for the map container</li>
+                        <li><strong>Fixed Height:</strong> Enable "Make this element fixed-height"</li>
+                        <li><strong>Minimum Height:</strong> Set to at least 600px (800px recommended)</li>
+                        <li><strong>Fit Height to Content:</strong> Must be OFF</li>
+                        <li><strong>Width:</strong> Keep "Make this element fixed-width" OFF for responsive design</li>
+                    </ol>
+
+                    <div class="alert">
+                        <div class="alert-title">💡 Layout Best Practice</div>
+                        <p>Other page sections (headers, navigation, footers) can use Row layout, but the map container must always be a Column with fixed height.</p>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="guide-section">
+                <div class="section-header">
+                    <div class="section-emoji">⏱️</div>
+                    <div class="section-title">Critical Workflow Timing</div>
+                </div>
+                <div class="section-content">
+                    <div class="warning">
+                        <div class="warning-title">🚨 Mandatory 1000ms Pause</div>
+                        <p><strong>ALWAYS add a 1000ms pause between draw_route and compute_fare actions.</strong> This ensures the route calculation completes before fare calculation begins. Without this pause, fare calculation will fail or return incorrect values.</p>
+                    </div>
+
+                    <h3>Correct Workflow Sequence</h3>
+                    
+                    <div class="code-block">
+<span class="comment">// Workflow: Calculate Route and Fare</span>
+1. Action: <span class="value">draw_route</span>
+   - origin_lat: Input From's latitude
+   - dest_lat: Input To's latitude
+   - mode: "car"
+
+2. Action: <span class="value">Pause</span>
+   - Duration: <span class="value">1000ms</span>
+
+3. Action: <span class="value">compute_fare</span>
+   - base_fee: 3.50
+   - per_km: 1.45
+   - surge_multiplier: 1.0
+                    </div>
+
+                    <div class="screenshot-link" onclick="openScreenshot('mapflow-workflow-draw-route')">
+                        📸 Screenshot: Draw route workflow configuration
+                        <span class="click-hint">👆 Click to view</span>
+                    </div>
+
+                    <div class="alert">
+                        <div class="alert-title">💡 Alternative: Use Events</div>
+                        <p>Instead of a fixed pause, you can use the <strong>route_ready</strong> event to trigger the compute_fare action. This ensures perfect timing regardless of network conditions.</p>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="guide-section">
+                <div class="section-header">
+                    <div class="section-emoji">⚙️</div>
+                    <div class="section-title">MapFlow Element Configuration</div>
+                </div>
+                <div class="section-content">
+                    <h3>Basic Configuration</h3>
+                    
+                    <div class="screenshot-link" onclick="openScreenshot('mapflow-element-configuration')">
+                        📸 Screenshot: MapFlow element configuration panel
+                        <span class="click-hint">👆 Click to view</span>
+                    </div>
+
+                    <h3>Required Fields</h3>
+                    
+                    <table class="config-table">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>marker_data_source</td>
+                                <td>Dynamic Value</td>
+                                <td>Yes</td>
+                                <td>Your data source (list of things)</td>
+                            </tr>
+                            <tr>
+                                <td>lat_key</td>
+                                <td>Static text</td>
+                                <td>Yes</td>
+                                <td>Field name for latitude (e.g., "lat", "latitude")</td>
+                            </tr>
+                            <tr>
+                                <td>lng_key</td>
+                                <td>Static text</td>
+                                <td>Yes</td>
+                                <td>Field name for longitude (e.g., "lng", "longitude")</td>
+                            </tr>
+                            <tr>
+                                <td>name_key</td>
+                                <td>Static text</td>
+                                <td>Optional</td>
+                                <td>Field name for marker title</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+                        <div class="guide-section">
+                <div class="section-header">
+                    <div class="section-emoji">🔧</div>
+                    <div class="section-title">Troubleshooting Common Issues</div>
+                </div>
+                <div class="section-content">
+                    <h3>Map Not Loading</h3>
+                    
+                    <div class="troubleshooting-item">
+                        <h4>❌ Issue: Map appears blank or doesn't load</h4>
+                        <p><strong>Most Common Causes:</strong></p>
+                        <ul>
+                            <li><strong>Layout Issue:</strong> Map not in a Column group with fixed height</li>
+                            <li><strong>Privacy Rules:</strong> Data fields not accessible due to privacy settings</li>
+                            <li><strong>Invalid API Key:</strong> HERE API key missing or incorrect</li>
+                            <li><strong>Data Source:</strong> Empty or malformed data source</li>
+                        </ul>
+                        <p><strong>Solutions:</strong></p>
+                        <ol>
+                            <li>Check layout configuration (Column + fixed height)</li>
+                            <li>Verify privacy rules allow access to lat/lng fields</li>
+                            <li>Test HERE API key in HERE developer console</li>
+                            <li>Ensure data source contains valid latitude/longitude values</li>
+                        </ol>
+                    </div>
+
+                    <div class="troubleshooting-item">
+                        <h4>❌ Issue: Workflow timing problems</h4>
+                        <p><strong>Common Causes:</strong></p>
+                        <ul>
+                            <li>compute_fare called before route completion</li>
+                            <li>Missing 1000ms pause between actions</li>
+                            <li>Network latency causing timing issues</li>
+                        </ul>
+                        <p><strong>Solutions:</strong></p>
+                        <ol>
+                            <li>Always add 1000ms pause after draw_route</li>
+                            <li>Use route_ready event to trigger fare calculation</li>
+                            <li>Check exposed states are properly referenced</li>
+                        </ol>
+                    </div>
+
+                    <h3>Debug Checklist</h3>
+                    <ol class="steps-list">
+                        <li><strong>Layout:</strong> Verify Column group with fixed height</li>
+                        <li><strong>Privacy:</strong> Check data accessibility in privacy rules</li>
+                        <li><strong>API Key:</strong> Test HERE API key validity</li>
+                        <li><strong>Timing:</strong> Add 1000ms pause between workflow actions</li>
+                        <li><strong>Data:</strong> Inspect data source content and format</li>
+                        <li><strong>Console:</strong> Check browser console for error messages</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-to-home">
+            <a href="index.html">← Back to MapFlow Home</a>
+        </div>
+
+                <div class="content" style="margin-top: 20px;">
+            <div class="guide-section">
+                <div class="alert">
+                    <div class="alert-title">📄 Need Technical Documentation in PDF Format?</div>
+                    <p>If you need technical documentation in PDF format for your team or organization, please send us an email at: <strong><a href="mailto:adminia@meetempo.com" style="color: #F49F1C;">adminia@meetempo.com</a></strong></p>
+                    <p>We'll be happy to provide comprehensive PDF documentation tailored to your specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openScreenshot(screenshotId) {
+            const screenshots = {
+                'bubble-marketplace-installation-pending': 'https://github.com/user-attachments/assets/19c370f2-8e21-4f07-b13f-cf21a69635fd',
+                'here-api-key-generation': 'https://github.com/user-attachments/assets/15dc4ce6-fd04-4029-bcb8-ffae32a50e5e',
+                'bubble-privacy-rules-user-geolocation': 'https://github.com/user-attachments/assets/c5ea9a67-e10c-42a0-adf5-ec23d54df63f',
+                'bubble-layout-column-fixed-height': 'https://github.com/user-attachments/assets/2e26c82c-e475-4f27-b3c7-5c293b3669c4',
+                'mapflow-element-configuration': 'https://github.com/user-attachments/assets/580ca5b0-0b28-4324-9c17-5a9d3bb06989',
+                'mapflow-workflow-draw-route': 'https://github.com/user-attachments/assets/94428ffc-8d6d-4ae5-8737-b1e4283ca42d',
+                'bubble-v2-colors-config-complete': 'https://github.com/user-attachments/assets/73e2282c-155e-4bc4-a175-3de3e65c083f',
+                'bubble-v2-colors-preview-map': 'https://github.com/user-attachments/assets/7e6ff615-58d2-4f17-8a04-0491598e4a3a',
+                'bubble-v2-templates-config': 'https://github.com/user-attachments/assets/920e134c-22fb-4802-aa26-b7767ceddf98',
+                'bubble-v2-templates-preview-tooltip': 'https://github.com/user-attachments/assets/0a4ad154-e450-4370-b077-1c83d49d1f42',
+                'bubble-v2-icons-config-shapes': 'https://github.com/user-attachments/assets/7c0b1113-b1e7-4e36-a9f4-10fda524b0fa',
+                'bubble-v2-icons-circles-preview': 'https://github.com/user-attachments/assets/a6de981f-c763-40dd-ad23-bf4a4395eaf9',
+                'bubble-v2-tooltip-themes-config': 'https://github.com/user-attachments/assets/6f009991-e97c-403a-a923-841ce1e7ed5b',
+                'bubble-v2-tooltip-themes-preview': 'https://github.com/user-attachments/assets/4fb3ec93-b6a0-47c2-a39e-d43627133b67'
+            };
+            
+            if (screenshots[screenshotId]) {
+                window.open(screenshots[screenshotId], '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
