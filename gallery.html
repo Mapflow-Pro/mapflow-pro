@@ -216,6 +216,39 @@
             border: 1px solid rgba(244, 159, 28, 0.2);
         }
 
+        .v2-screenshot-card {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-color: #10b981;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.2);
+        }
+
+        .v2-screenshot-card:hover {
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+            border-color: #10b981;
+        }
+
+        .v2-screenshot-card::before {
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+
+        .v2-screenshot-icon {
+            background: linear-gradient(45deg, #10b981, #059669);
+        }
+
+        .v2-tag {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .v2-view-button {
+            background: linear-gradient(45deg, #10b981, #34d399);
+        }
+
+        .v2-view-button:hover {
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
         .view-button {
             background: linear-gradient(45deg, #F49F1C, #ffa726);
             color: white;
@@ -362,7 +395,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-container">
             <div class="nav-links">
@@ -385,7 +417,6 @@
             <div class="subtitle">Visual showcase of MapFlow Pro features and configuration</div>
         </div>
 
-        <!-- Stats Banner -->
         <div class="stats-banner">
             <h2 style="margin-bottom: 15px;">Visual Documentation</h2>
             <p style="opacity: 0.9;">Comprehensive screenshots covering installation to advanced configuration</p>
@@ -409,7 +440,6 @@
             </div>
         </div>
 
-        <!-- Live Demo Banner -->
         <div class="demo-banner">
             <h3>🚀 Try MapFlow Pro Live Demo</h3>
             <p>Experience all features in action with our interactive demo application</p>
@@ -419,7 +449,174 @@
         </div>
 
         <div class="content">
-            <!-- Installation & Setup -->
+            <div class="gallery-section">
+                <div class="section-header">
+                    <div class="section-emoji">✨</div>
+                    <div class="section-title">NEW IN V2 - August 2025</div>
+                </div>
+                <div class="gallery-grid">
+                    <div class="screenshot-card v2-screenshot-card" onclick="openScreenshot('bubble-v2-colors-config-complete')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon v2-screenshot-icon">🎨</div>
+                            <div>
+                                <div class="screenshot-title">V2 Dynamic Colors Setup</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag v2-tag">V2</span>
+                                    <span class="tag v2-tag">Colors</span>
+                                    <span class="tag v2-tag">Configuration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            The complete configuration panel for the new dynamic colors system, mapping data fields to custom HEX codes.
+                        </div>
+                        <button class="view-button v2-view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card v2-screenshot-card" onclick="openScreenshot('bubble-v2-colors-preview-map')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon v2-screenshot-icon">🌈</div>
+                            <div>
+                                <div class="screenshot-title">V2 Dynamic Colors Preview</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag v2-tag">V2</span>
+                                    <span class="tag v2-tag">Colors</span>
+                                    <span class="tag v2-tag">Live Preview</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            A live map preview showing how markers are automatically colored based on data categories.
+                        </div>
+                        <button class="view-button v2-view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card v2-screenshot-card" onclick="openScreenshot('bubble-v2-templates-config')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon v2-screenshot-icon">📝</div>
+                            <div>
+                                <div class="screenshot-title">V2 Tooltip Templates Setup</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag v2-tag">V2</span>
+                                    <span class="tag v2-tag">Templates</span>
+                                    <span class="tag v2-tag">Configuration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Configuration panel for creating dynamic tooltips with <code>{{field}}</code> syntax and emoji support.
+                        </div>
+                        <button class="view-button v2-view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card v2-screenshot-card" onclick="openScreenshot('bubble-v2-templates-preview-tooltip')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon v2-screenshot-icon">💬</div>
+                            <div>
+                                <div class="screenshot-title">V2 Tooltip Templates Preview</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag v2-tag">V2</span>
+                                    <span class="tag v2-tag">Templates</span>
+                                    <span class="tag v2-tag">Live Preview</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            A live preview of a tooltip showing dynamic content and emojis rendered from a template.
+                        </div>
+                        <button class="view-button v2-view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card v2-screenshot-card" onclick="openScreenshot('bubble-v2-icons-config-shapes')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon v2-screenshot-icon">📍</div>
+                            <div>
+                                <div class="screenshot-title">V2 Custom Icons Setup</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag v2-tag">V2</span>
+                                    <span class="tag v2-tag">Icons</span>
+                                    <span class="tag v2-tag">Configuration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Configuration panel to choose between different built-in SVG icon shapes (pin, circle, square).
+                        </div>
+                        <button class="view-button v2-view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card v2-screenshot-card" onclick="openScreenshot('bubble-v2-icons-circles-preview')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon v2-screenshot-icon">🟢</div>
+                            <div>
+                                <div class="screenshot-title">V2 Custom Icons Preview</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag v2-tag">V2</span>
+                                    <span class="tag v2-tag">Icons</span>
+                                    <span class="tag v2-tag">Preview</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Live map preview showing how the new circular SVG icons are rendered with automatic borders.
+                        </div>
+                        <button class="view-button v2-view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card v2-screenshot-card" onclick="openScreenshot('bubble-v2-tooltip-themes-config')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon v2-screenshot-icon">🎯</div>
+                            <div>
+                                <div class="screenshot-title">V2 Tooltip Themes Setup</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag v2-tag">V2</span>
+                                    <span class="tag v2-tag">Themes</span>
+                                    <span class="tag v2-tag">Configuration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            Configuration panel to map data categories to specific tooltip background colors.
+                        </div>
+                        <button class="view-button v2-view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+
+                    <div class="screenshot-card v2-screenshot-card" onclick="openScreenshot('bubble-v2-tooltip-themes-preview')">
+                        <div class="screenshot-header">
+                            <div class="screenshot-icon v2-screenshot-icon">🖼️</div>
+                            <div>
+                                <div class="screenshot-title">V2 Tooltip Themes Preview</div>
+                                <div class="screenshot-tags">
+                                    <span class="tag v2-tag">V2</span>
+                                    <span class="tag v2-tag">Themes</span>
+                                    <span class="tag v2-tag">Live Preview</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screenshot-description">
+                            A live preview of a map showing how tooltip colors change dynamically based on data.
+                        </div>
+                        <button class="view-button v2-view-button">
+                            📸 View Screenshot
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="gallery-section">
                 <div class="section-header">
                     <div class="section-emoji">📦</div>
@@ -488,7 +685,6 @@
                 </div>
             </div>
 
-            <!-- Layout & Configuration -->
             <div class="gallery-section">
                 <div class="section-header">
                     <div class="section-emoji">🏗️</div>
@@ -538,7 +734,6 @@
                 </div>
             </div>
 
-            <!-- Tooltip System -->
             <div class="gallery-section">
                 <div class="section-header">
                     <div class="section-emoji">💬</div>
@@ -628,7 +823,6 @@
                 </div>
             </div>
 
-            <!-- Workflow Actions -->
             <div class="gallery-section">
                 <div class="section-header">
                     <div class="section-emoji">🔄</div>
@@ -698,7 +892,6 @@
                 </div>
             </div>
 
-            <!-- Integration & Results -->
             <div class="gallery-section">
                 <div class="section-header">
                     <div class="section-emoji">🔗</div>
@@ -770,7 +963,17 @@
                 'mapflow-draw-route-preview-result': 'https://github.com/user-attachments/assets/88156fc5-9779-49ac-b590-370e6ec43e10',
                 'mapflow-workflow-compute-fare': 'https://github.com/user-attachments/assets/0552c9c9-7b8a-4b7a-93ae-881af8c7db5b',
                 'mapflow-exposed-states-integration': 'https://github.com/user-attachments/assets/fd680b9c-ca39-4019-b0d6-4e4b8f6d04d0',
-                'mapflow-route-summary-integration': 'https://github.com/user-attachments/assets/3a940a34-f4b2-475f-947a-8f144fb6e44b'
+                'mapflow-route-summary-integration': 'https://github.com/user-attachments/assets/3a940a34-f4b2-475f-947a-8f144fb6e44b',
+                
+                // V2 Screenshots
+                'bubble-v2-colors-config-complete': 'https://github.com/user-attachments/assets/73e2282c-155e-4bc4-a175-3de3e65c083f',
+                'bubble-v2-colors-preview-map': 'https://github.com/user-attachments/assets/7e6ff615-58d2-4f17-8a04-0491598e4a3a',
+                'bubble-v2-templates-config': 'https://github.com/user-attachments/assets/920e134c-22fb-4802-aa26-b7767ceddf98',
+                'bubble-v2-templates-preview-tooltip': 'https://github.com/user-attachments/assets/0a4ad154-e450-4370-b077-1c83d49d1f42',
+                'bubble-v2-icons-config-shapes': 'https://github.com/user-attachments/assets/7c0b1113-b1e7-4e36-a9f4-10fda524b0fa',
+                'bubble-v2-icons-circles-preview': 'https://github.com/user-attachments/assets/a6de981f-c763-40dd-ad23-bf4a4395eaf9',
+                'bubble-v2-tooltip-themes-config': 'https://github.com/user-attachments/assets/6f009991-e97c-403a-a923-841ce1e7ed5b',
+                'bubble-v2-tooltip-themes-preview': 'https://github.com/user-attachments/assets/4fb3ec93-b6a0-47c2-a39e-d43627133b67'
             };
             
             if (screenshots[screenshotId]) {
