@@ -114,45 +114,45 @@
             border-bottom: none;
         }
 
-        /* V2-specific styles */
-        .v2-section {
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            border: 2px solid #10b981;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
+        /* V2-specific styles */
+        .v2-section {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
 
-        .v2-screenshot-link {
-            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 12px;
-            margin: 15px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-        }
+        .v2-screenshot-link {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
 
-        .v2-screenshot-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-            text-decoration: none;
-            color: white;
-        }
+        .v2-screenshot-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+            text-decoration: none;
+            color: white;
+        }
 
-        .v2-alert {
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            border: 1px solid #10b981;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid #10b981;
-        }
+        .v2-alert {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 1px solid #10b981;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #10b981;
+        }
 
-        /* General styles, including V2 */
+        /* General styles, including V2 */
         .section-header {
             display: flex;
             align-items: center;
@@ -703,7 +703,6 @@ Page Layout
                                 <th>Field</th>
                                 <th>Type</th>
                                 <th>Required</th>
-                                <th>Description</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -711,7 +710,6 @@ Page Layout
                                 <td>marker_data_source</td>
                                 <td>Dynamic Value</td>
                                 <td>Yes</td>
-                                <td>Your data source (list of things)</td>
                             </tr>
                             <tr>
                                 <td>lat_key</td>
@@ -792,7 +790,7 @@ Page Layout
             <a href="index.html">← Back to MapFlow Home</a>
         </div>
 
-                <div class="content" style="margin-top: 20px;">
+        <div class="content" style="margin-top: 20px;">
             <div class="guide-section">
                 <div class="alert">
                     <div class="alert-title">📄 Need Technical Documentation in PDF Format?</div>
@@ -812,21 +810,21 @@ Page Layout
                 'bubble-layout-column-fixed-height': 'https://github.com/user-attachments/assets/2e26c82c-e475-4f27-b3c7-5c293b3669c4',
                 'mapflow-element-configuration': 'https://github.com/user-attachments/assets/580ca5b0-0b28-4324-9c17-5a9d3bb06989',
                 'mapflow-workflow-draw-route': 'https://github.com/user-attachments/assets/94428ffc-8d6d-4ae5-8737-b1e4283ca42d',
-                'bubble-v2-colors-config-complete': 'https://github.com/user-attachments/assets/73e2282c-155e-4bc4-a175-3de3e65c083f',
-                'bubble-v2-colors-preview-map': 'https://github.com/user-attachments/assets/7e6ff615-58d2-4f17-8a04-0491598e4a3a',
-                'bubble-v2-templates-config': 'https://github.com/user-attachments/assets/920e134c-22fb-4802-aa26-b7767ceddf98',
-                'bubble-v2-templates-preview-tooltip': 'https://github.com/user-attachments/assets/0a4ad154-e450-4370-b077-1c83d49d1f42',
-                'bubble-v2-icons-config-shapes': 'https://github.com/user-attachments/assets/7c0b1113-b1e7-4e36-a9f4-10fda524b0fa',
-                'bubble-v2-icons-circles-preview': 'https://github.com/user-attachments/assets/a6de981f-c763-40dd-ad23-bf4a4395eaf9',
-                'bubble-v2-tooltip-themes-config': 'https://github.com/user-attachments/assets/6f009991-e97c-403a-a923-841ce1e7ed5b',
-                'bubble-v2-tooltip-themes-preview': 'https://github.com/user-attachments/assets/4fb3ec93-b6a0-47c2-a39e-d43627133b67'
-            };
-            
-            if (screenshots[screenshotId]) {
-                window.open(screenshots[screenshotId], '_blank');
-            } else {
-                console.error('Screenshot URL not found for key:', screenshotId);
-            }
+                'bubble-v2-colors-config-complete': 'https://github.com/user-attachments/assets/73e2282c-155e-4bc4-a175-3de3e65c083f',
+                'bubble-v2-colors-preview-map': 'https://github.com/user-attachments/assets/7e6ff615-58d2-4f17-8a04-0491598e4a3a',
+                'bubble-v2-templates-config': 'https://github.com/user-attachments/assets/920e134c-22fb-4802-aa26-b7767ceddf98',
+                'bubble-v2-templates-preview-tooltip': 'https://github.com/user-attachments/assets/0a4ad154-e450-4370-b077-1c83d49d1f42',
+                'bubble-v2-icons-config-shapes': 'https://github.com/user-attachments/assets/7c0b1113-b1e7-4e36-a9f4-10fda524b0fa',
+                'bubble-v2-icons-circles-preview': 'https://github.com/user-attachments/assets/a6de981f-c763-40dd-ad23-bf4a4395eaf9',
+                'bubble-v2-tooltip-themes-config': 'https://github.com/user-attachments/assets/6f009991-e97c-403a-a923-841ce1e7ed5b',
+                'bubble-v2-tooltip-themes-preview': 'https://github.com/user-attachments/assets/4fb3ec93-b6a0-47c2-a39e-d43627133b67'
+            };
+            
+            if (screenshots[screenshotId]) {
+                window.open(screenshots[screenshotId], '_blank');
+            } else {
+                console.error('Screenshot URL not found for key:', screenshotId);
+            }
         }
     </script>
 </body>
