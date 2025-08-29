@@ -114,13 +114,45 @@
             border-bottom: none;
         }
 
-        .v2-section {
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            border: 2px solid #10b981;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
+        /* V2-specific styles */
+        .v2-section {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
 
+        .v2-screenshot-link {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .v2-screenshot-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        .v2-alert {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 1px solid #10b981;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #10b981;
+        }
+
+        /* General styles, including V2 */
         .section-header {
             display: flex;
             align-items: center;
@@ -136,59 +168,6 @@
             font-size: 2rem;
             font-weight: 700;
             color: #030E4F;
-        }
-
-        .section-content h3 {
-            color: #030E4F;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin: 25px 0 15px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .section-content h3::before {
-            content: "▶";
-            color: #F49F1C;
-            margin-right: 10px;
-            font-size: 0.8em;
-        }
-
-        .v2-feature-card {
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid #10b981;
-        }
-
-        .v2-screenshot-link {
-            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 12px;
-            margin: 15px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-        }
-
-        .v2-screenshot-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-            text-decoration: none;
-            color: white;
-        }
-
-        .v2-alert {
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            border: 1px solid #10b981;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid #10b981;
         }
 
         .section-content h3 {
@@ -848,6 +827,8 @@ Page Layout
             
             if (screenshots[screenshotId]) {
                 window.open(screenshots[screenshotId], '_blank');
+            } else {
+                console.error('Screenshot URL not found for key:', screenshotId);
             }
         }
     </script>
